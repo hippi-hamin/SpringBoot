@@ -1,0 +1,3 @@
+INDEX VERSION 1.134
+/Users/hamin/Documents/sts4-work/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/3502315446.index
+/start/src/main/java

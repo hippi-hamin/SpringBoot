@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+/Users/hamin/Documents/sts4-work/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1498311091.index
+3141601745.index
+3699237696.index
+1986132398.index
+509850834.index
+1764638756.index
