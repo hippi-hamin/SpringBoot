@@ -5,9 +5,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-<header></header>
+<header th:insert="~{fragments::header('수정양식','')}"></header>
 <section>
-<h2>제품정보 수정 양</h2>
+<h2>제품정보 수정 양식</h2>
 <form th:action="@{dataUpdate}" method="post" th:object="${product}">
 	<input type="text" name="pname" placeholder="제품명"
 		th:value="*{pname}"><br>
@@ -17,8 +17,9 @@
 		th:value="*{price}"><br>
 	<input type="number" name="amount" placeholder="수량"
 		th:value="*{amount}"><br>
-	<input type="submit">
+	<input type="submit" value="수정">
 </form>
 </section>
+<footer th:replace="~{fragments::footer}"></footer>
 </body>
 </html>

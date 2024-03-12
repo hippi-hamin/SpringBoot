@@ -9,4 +9,4 @@ managedBuilders=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><comman
 buildScriptPath=build.gradle
 subprojectPaths=
 hasAutoBuildTasks=false
-gradleVersion=8.5
+gradleVersion=8.6

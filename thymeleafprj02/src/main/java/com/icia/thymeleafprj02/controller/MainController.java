@@ -27,7 +27,8 @@ public class MainController {
 	@GetMapping("second")
 	public String second(@RequestParam("data1") String data1,
 						 @RequestParam("data2") int data2) {
-		log.info("second - {}, {}", data1, data2);		
+		log.info("second - {}, {}", data1, data2);
+		
 		return "inputForm";
 	}
 	
@@ -39,8 +40,13 @@ public class MainController {
 	}
 	
 	@PostMapping("dataUpdate")
-	public String dataUpdate(ProductDto product)  {
+	public String dataUpdate(ProductDto product) {
 		log.info("dataUpdate - {}", product);
 		return "redirect:/";
 	}
 }
+
+
+
+
+
