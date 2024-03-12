@@ -31,8 +31,8 @@ INDEX VERSION 1.134+/Users/hamin/Documents/sts4-work/.metadata/.plugins/org.ecli
 3273076057.index
 871452290.index
 2605414933.index
-3924077915.index
 3215551457.index
+3924077915.index
 3046131477.index
 3438299732.index
 161344923.index
@@ -44,9 +44,9 @@ INDEX VERSION 1.134+/Users/hamin/Documents/sts4-work/.metadata/.plugins/org.ecli
 467570760.index
 1626884892.index
 1776997533.index
-1265279981.index
-2802010610.index
 2648770531.index
+2802010610.index
+1265279981.index
 2833380041.index
 2800565768.index
 19471898.index
@@ -55,8 +55,8 @@ INDEX VERSION 1.134+/Users/hamin/Documents/sts4-work/.metadata/.plugins/org.ecli
 4241297775.index
 3650953553.index
 3893598627.index
-1255968419.index
 1099980382.index
+1255968419.index
 1243933550.index
 3170074953.index
 765213814.index
@@ -76,8 +76,8 @@ INDEX VERSION 1.134+/Users/hamin/Documents/sts4-work/.metadata/.plugins/org.ecli
 2132294326.index
 2850812295.index
 3613006213.index
-3076482706.index
 3375499040.index
+3076482706.index
 1276962666.index
 2900688563.index
 112821562.index
@@ -107,9 +107,9 @@ INDEX VERSION 1.134+/Users/hamin/Documents/sts4-work/.metadata/.plugins/org.ecli
 2838171609.index
 3574225124.index
 3533034555.index
+1674260771.index
 2497569758.index
 3800862124.index
-1674260771.index
 509850834.index
 1375207633.index
 1322499586.index

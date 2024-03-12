@@ -1,6 +1,8 @@
 package com.icia.thymeleafprj02.controller;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -43,6 +45,26 @@ public class MainController {
 	public String dataUpdate(ProductDto product) {
 		log.info("dataUpdate - {}", product);
 		return "redirect:/";
+	}
+	
+	@GetMapping("third")
+	public String third(Model model) {
+		log.info("third()");
+		
+		model.addAttribute("mid", "user");
+		
+		model.addAttribute("age", 26);
+		
+		//List 전송
+		List<String> cafeMenus = new ArrayList<>();
+		cafeMenus.add("아메리카노");
+		cafeMenus.add("카페라떼");
+		cafeMenus.add("카페모카");
+		cafeMenus.add("에스프레소");
+		cafeMenus.add("녹차");
+		// model은 jsp로 넘기기위한 상자.
+		model.addAttribute("menus", cafeMenus);
+		return "third";
 	}
 }
 
