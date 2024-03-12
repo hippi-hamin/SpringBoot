@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;thymeleafprj02/summary.txt&apos; to &apos;summary&apos;" description="Rename resource &apos;summary.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="summary.txt" name="summary" stamp="1710210944333" updateReferences="true"/>
+</session>
