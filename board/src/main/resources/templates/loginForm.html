@@ -32,7 +32,8 @@
                    autofocus required placeholder="아이디">
             <input type="password" class="login-input"
                    name="m_pwd" required placeholder="비밀번호">
-            <input type="submit" class="login-btn" value="로그인">
+            <!--주의 :form tag 안에 input과 button 태그가 같이 있을 시 따로 type을 넣지 않으면 button도 submit type역할을 하게 됨... -->
+            <input type="submit" class="login-btn" value="로그인"> 
             <button type="button" class="idcheck-btn" id="pchange">비밀번호찾기</button>
         </form>        
     </div>

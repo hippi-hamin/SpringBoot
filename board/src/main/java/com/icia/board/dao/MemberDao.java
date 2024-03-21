@@ -9,5 +9,11 @@ public interface MemberDao {
 	//로그인 비밀번호 가져오는 메소드
 	String selectPassword(String mid);
 	//로그인 성공 후 회원 정보를 가져오는 메소드
-	MemberDto selectMember(String mid); 
+	MemberDto selectMember(String mid);
+	//idCheck용 메소드
+	int selectId(String mid);
+	//회원가입 메소드
+	void insertMember(MemberDto member);
 }
+
+

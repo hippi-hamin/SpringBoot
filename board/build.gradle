@@ -31,6 +31,9 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter-test:3.0.3'
+	implementation 'org.bgee.log4jdbc-log4j2:log4jdbc-log4j2-jdbc4.1:1.16'
+	implementation 'org.springframework.security:spring-security-core'
+	implementation 'org.springframework.boot:spring-boot-starter-mail' //메일 전송을 위한 객체들이 정의되어 있는 라이브러리
 }
 
 tasks.named('test') {
