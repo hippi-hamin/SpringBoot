@@ -18,7 +18,8 @@ public class MemberService {
 	private MemberDao mDao;
 	
 	//비밀번호 암호화 인코더
-	private BCryptPasswordEncoder pEncoder = new BCryptPasswordEncoder();
+	private BCryptPasswordEncoder pEncoder = 
+			new BCryptPasswordEncoder();
 	
 	//로그인 처리 메소드
 	public String loginProc(MemberDto member,
@@ -32,7 +33,7 @@ public class MemberService {
 		String encPwd = mDao.selectPassword(member.getM_id());
 		
 		if(encPwd != null) { //member가 존재함
-			//matches(평문-사용자 입력 값, 암호문-DB저장 값)
+			//matches(평문-사용자입력값, 암호문-DB저장값)
 			if(pEncoder.matches(member.getM_pwd(), encPwd)) {
 				//로그인 성공!
 				member = mDao.selectMember(member.getM_id());
@@ -74,7 +75,7 @@ public class MemberService {
 	public String memberJoin(MemberDto member,
 							 RedirectAttributes rttr) {
 		log.info("memberJoin()");
-		//가입 성공 시 첫페이지 (또는 로그인 페이지)로, 실패 시 가입 페이지로 이동
+		//가입 성공 시 첫페이지(또는 로그인페이지)로, 실패 시 가입 페이지로 이동
 		String view = null;
 		String msg = null;
 		
@@ -90,7 +91,38 @@ public class MemberService {
 		} catch (Exception e) {
 			e.printStackTrace();
 			view = "redirect:joinForm";
-			msg = "가입 실패";			
+			msg = "가입 실패";
+		}
+		
+		rttr.addFlashAttribute("msg", msg);
+		
+		return view;
+	}
+	
+	public String pwdChangeProc(MemberDto member,
+								HttpSession session,
+								RedirectAttributes rttr) {
+		log.info("pwdChangeProc()");
+		String view = null;
+		String msg = null;
+		
+		String m_id = (String) session.getAttribute("m_id");
+		String encPwd = pEncoder.encode(member.getM_pwd());
+		
+		
+		if(m_id != null) {
+			member.setM_id(m_id);
+			member.setM_pwd(encPwd);
+			
+			try {
+				mDao.updatePassword(member);
+				msg = "비밀번호 변경 성공";
+				view = "redirect:loginForm";
+			} catch (Exception e) {
+				e.printStackTrace();
+				msg = "비밀번호 변경 실패";
+				view = "redirect:pwdChange";
+			}
 		}
 		
 		rttr.addFlashAttribute("msg", msg);

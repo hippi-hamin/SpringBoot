@@ -99,7 +99,7 @@
     function check(){
     	//id 중복체크 여부 확인
     	if(ck == false){
-    		alert("아이디 중복 확인을 해주세요");
+    		alert("아이디 중복 확인을 해주세요.");
     		return false;
     	}
     	
@@ -109,12 +109,12 @@
     	
     	let length = jfrm.length - 1;
     	
-    	for (let i = 0; i<length; i++){
+    	for(let i = 0; i < length; i++){
     		if(jfrm[i].value == "" || jfrm[i] == null){
-    			alert(`${jfrm[i].title} 입력! `);
+    			alert(`${jfrm[i].title} 입력!`);
     			jfrm[i].focus();
     			return false;
-    		}	
+    		}
     	}
     	
     	return true;
