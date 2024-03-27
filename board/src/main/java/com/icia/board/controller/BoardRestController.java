@@ -1,12 +1,17 @@
 package com.icia.board.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.icia.board.dto.BoardFileDto;
 import com.icia.board.dto.MemberDto;
+import com.icia.board.dto.ReplyDto;
+import com.icia.board.service.BoardService;
 import com.icia.board.service.MailService;
 import com.icia.board.service.MemberService;
 
@@ -21,6 +26,9 @@ public class BoardRestController {
 	
 	@Autowired
 	private MailService mailServ;
+	
+	@Autowired
+	private BoardService bServ;
 	
 	@GetMapping("idCheck")
 	public String idCheck(@RequestParam("mid") String mid) {
@@ -44,7 +52,21 @@ public class BoardRestController {
 		return res;
 	}
 	
+	@PostMapping("replyInsert")
+	public ReplyDto replyInsert(ReplyDto reply) {
+		log.info("replyInsert()");
+		reply = bServ.replyInsert(reply);
+		
+		return reply;
+	}
 	
+	@PostMapping("delFile")
+	public List<BoardFileDto> delFile(BoardFileDto bFile,
+									  HttpSession session){
+		log.info("delFile()");
+		List<BoardFileDto> fList = bServ.delFile(bFile, session);
+		return fList;
+	}
 }//class end
 
 

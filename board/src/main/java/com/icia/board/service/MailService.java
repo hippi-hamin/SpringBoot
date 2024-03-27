@@ -100,6 +100,9 @@ public class MailService {
 				emailSender.send(emailForm);//메일 전송
 				
 				res = "ok";
+				//인증코드 확인을 위해 세션에 저장.
+				session.setAttribute("authNum", authNum);
+				session.setAttribute("m_id", member.getM_id());
 			}
 			else {
 				res = "fail";
@@ -111,7 +114,7 @@ public class MailService {
 		
 		return res;
 	}
-	
+
 	public String codeAuth(String v_code, HttpSession session) {
 		log.info("codeAuth()");
 		String authNum = (String) session.getAttribute("authNum");
@@ -123,11 +126,10 @@ public class MailService {
 			res = "fail";
 		}
 		
-		session.removeAttribute("authNum"); //
+		session.removeAttribute("authNum");
 		
 		return res;
-	}	
-	
+	}
 }//class end
 
 

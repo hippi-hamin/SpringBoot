@@ -99,7 +99,7 @@ public class MemberService {
 		return view;
 	}
 	
-	public String pwdChangeProc(MemberDto member,
+	public String pwdChangeProc(MemberDto member, 
 								HttpSession session,
 								RedirectAttributes rttr) {
 		log.info("pwdChangeProc()");
@@ -109,9 +109,8 @@ public class MemberService {
 		String m_id = (String) session.getAttribute("m_id");
 		String encPwd = pEncoder.encode(member.getM_pwd());
 		
-		
 		if(m_id != null) {
-			member.setM_id(m_id);
+			member.setM_id(m_id);			
 			member.setM_pwd(encPwd);
 			
 			try {
@@ -128,6 +127,13 @@ public class MemberService {
 		rttr.addFlashAttribute("msg", msg);
 		
 		return view;
+	}
+
+	public String logout(HttpSession session, RedirectAttributes rttr) {
+		log.info("logout()");
+		session.invalidate();
+		rttr.addFlashAttribute("msg", "로그아웃되었습니다.");
+		return "redirect:/";
 	}
 	
 }//class end

@@ -84,12 +84,17 @@ public class MemberController {
 								HttpSession session,
 								RedirectAttributes rttr) {
 		log.info("pwdChangeProc()");
-		String view = mServ.pwdChangeProc(member, session, rttr);
-		
+		String view = mServ.pwdChangeProc(member, session, rttr);		
 		return view;
 	}
 	
-	
+	@GetMapping("logout")
+	public String logout(HttpSession session, 
+						 RedirectAttributes rttr) {
+		log.info("logout()");
+		String view = mServ.logout(session, rttr);
+		return view;
+	}
 }
 
 
